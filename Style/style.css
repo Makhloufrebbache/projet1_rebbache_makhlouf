@@ -1,0 +1,67 @@
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;text-align: center;}
+
+input {
+  width: 600px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+label{
+  color:dark;
+ font-weight:bold;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 24px;
+  margin:1px 100px;
+  border: none;
+  cursor: pointer;
+  width:645px ;
+  margin-left:164px ;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.container {
+  padding: 16px;
+}
+h2{
+  text-align: center;
+}
+#nom{
+  padding-left: 27px;
+}
+#adresse{
+  padding-right: 2px;
+
+}
+#adresseLivraison{
+  padding-right: 94px;
+
+}
+#email{
+  padding-right: 48px;
+}
+#pwd{
+  padding-right: 14px;
+
+}
+
+
+
+
+
+
+
