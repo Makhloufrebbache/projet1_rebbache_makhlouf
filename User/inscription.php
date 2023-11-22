@@ -40,10 +40,6 @@
     <label>Password</label>
     <input type="text" placeholder="Entrer votre mot depasse" name="psw" >
     </div> 
-    <div> 
-    <button type="submit">Login</button>
-    </div>
-    <div>
     <button type="submit">S'inscrire</button>
     </div>
   </div>
