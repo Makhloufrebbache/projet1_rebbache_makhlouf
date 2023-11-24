@@ -6,10 +6,7 @@
 <h2>Formulaire d'inscription</h2>
 
 <form action="./traitementInscription.php" method="post">
-  <div class="">
-   <!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
-  </div>
-
+ 
   <div class="container">
    <div id="nom">
     <label >Nom</label>
@@ -38,7 +35,7 @@
    
    <div id="pwd">
     <label>Password</label>
-    <input type="text" placeholder="Entrer votre mot depasse" name="psw" >
+    <input type="text" placeholder="Entrer votre mot depasse" name="pwd" >
     </div> 
     <button type="submit">S'inscrire</button>
     </div>

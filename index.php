@@ -7,7 +7,7 @@
 
 <form action="./traitementLogin.php" method="post">
   <div class="">
-   <!--  <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+    
   </div>
 
   <div class="container">
