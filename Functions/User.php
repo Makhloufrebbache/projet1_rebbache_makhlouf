@@ -20,19 +20,32 @@ function createUser($user)
 }
 /*Fonction de vérification de l'éxistance d'un utilisateur dans la base de données*/
 function existUser($username){
-    $isExist=["exist"=>false,"msg"=>""];
-    //$existe=false;
     global $conn;
+    $isExist=["exist"=>false,"msg"=>""];
     $result = mysqli_query($conn,"SELECT COUNT(user_name) FROM user WHERE user_name = '$username'" );
     $nbr_ligne = mysqli_fetch_row($result);
     if($nbr_ligne[0]!=0){
-    $isExist=["exist"=>true,"msg"=>"le username existe déja !"]; 
+    $isExist=["exist"=>true,"msg"=>"le nom d'utilisateur existe déja !"]; 
     }
     else{
      $isExist=["exist"=>false,"msg"=>"Inscription avec succés !"];   
     }
-    
+
     return $isExist;
  } 
+  /* fonction pour concroler le formulaire d'inscription */
+    function verifierDataFormsInscription($dataForms,$p1,$p2,$p3,$p4,$p5){
+      $dataForms=['user_name'=>$p1,'email'=>$p2,'pwd'=>$p3,'fname'=>$p4,'lname'=>$p5];
+      $Msg=[];
+    if ($dataForms['user_name']==""||($dataForms["email"]=="")||($dataForms["pwd"]=="")||($dataForms["fname"]=="")||($dataForms["lname"]=="")) {
+        $Msg =['isEmpty' => true,'msg'=>'Erreur: un ou plusieurs champs sont vide, veuillez remplir tous les champs.'];  
+        }
+    else{
+        $Msg =['isEmpty' => false,'msg'=>'Succés: tous les champs sont remplis.']; 
+        }
+    return $Msg;
+ }
+    
+      
 ?>
 
