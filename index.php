@@ -1,37 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="Style/style.css">
-<h2>Formulaire de connexion</h2>
-
-<form action="./traitementLogin.php" method="post">
-  <div class="">
-    
-  </div>
-
-  <div class="container">
-   
-   <div id="nomUtilisateur">
-    <label >Nom utilisateur</label>
-    <input type="text" placeholder="Entrer votre nom d'utilisateur" name="nomUtilisateur">
-   </div>
-   
-   
-   <div id="pwd">
-    <label>Password</label>
-    <input type="text" placeholder="Entrer votre mot depasse" name="psw" >
-    </div> 
-    <button type="submit">Se connecter</button>
-    <button type="submit" formaction="./User/inscription.php">S'inscrire</button>
-    </div>
-  </div>
-  </div>
-</form>
-
-</body>
-</html>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style/style.css">
+  <title>Acceuil</title>
+</head>
+<body>
+ <div id ="nav_barre">
+  <div id ="div_btn_auth"><a href="User/login.php" >Authentifier</a></div>
+  <div id ="div_btn_compt"><a href="User/inscription.php">Crée mon compte</a></div>
+</div> 
 </body>
 </html>

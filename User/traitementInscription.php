@@ -29,6 +29,7 @@ else{
    {  
       $user=['user_name'=>$_POST["nomUtilisateur"],'email'=>$_POST["mail"],'pwd'=>$_POST["pwd"],'fname'=>$_POST["nom"],'lname'=>$_POST["prenom"]];
       createUser($user);
+      header('Location: login.php');
    }
 }
 

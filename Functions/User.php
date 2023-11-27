@@ -18,27 +18,53 @@ function createUser($user)
         $result = mysqli_stmt_execute($stmt);
     }
 }
-/*Fonction de vérification de l'éxistance d'un utilisateur dans la base de données*/
+//Fonction de vérification de l'éxistance d'un nom d'utilisateur dans la base de données
 function existUser($username){
     global $conn;
     $isExist=["exist"=>false,"msg"=>""];
-    $result = mysqli_query($conn,"SELECT COUNT(user_name) FROM user WHERE user_name = '$username'" );
-    $nbr_ligne = mysqli_fetch_row($result);
-    if($nbr_ligne[0]!=0){
+    $result = mysqli_query($conn,"SELECT DISTINCT user_name FROM user WHERE user_name = '$username'" );
+    $nameFind = mysqli_fetch_assoc($result);
+    if($nameFind["user_name"]==$username){
     $isExist=["exist"=>true,"msg"=>"le nom d'utilisateur existe déja !"]; 
     }
     else{
      $isExist=["exist"=>false,"msg"=>"Inscription avec succés !"];   
     }
-
     return $isExist;
  } 
-  /* fonction pour concroler le formulaire d'inscription */
+ //Fonction de vérification de l'authentification d'utilisateur dans la base de données*/
+function authenticatedUser($username,$password){
+    global $conn;
+    $isExist=["exist"=>false,"msg"=>""];
+    $result = mysqli_query($conn,"SELECT DISTINCT user_name,pwd FROM user WHERE user_name = '$username' and pwd='$password'" );
+    $nameFind = mysqli_fetch_assoc($result);
+    var_dump($nameFind);
+    if($nameFind["user_name"]==$username and $nameFind["pwd"]==$password ){
+    $isExist=["auth"=>true,"msg"=>"Utilisateur connecté "]; 
+    }
+    else{
+     $isExist=["auth"=>false,"msg"=>"Veuillez saisir correctement vous informations !"];   
+    }
+    return $isExist;
+ } 
+  /* fonction de controle de formulaire d'inscription */
     function verifierDataFormsInscription($dataForms,$p1,$p2,$p3,$p4,$p5){
       $dataForms=['user_name'=>$p1,'email'=>$p2,'pwd'=>$p3,'fname'=>$p4,'lname'=>$p5];
       $Msg=[];
     if ($dataForms['user_name']==""||($dataForms["email"]=="")||($dataForms["pwd"]=="")||($dataForms["fname"]=="")||($dataForms["lname"]=="")) {
         $Msg =['isEmpty' => true,'msg'=>'Erreur: un ou plusieurs champs sont vide, veuillez remplir tous les champs.'];  
+        }
+    else{
+        $Msg =['isEmpty' => false,'msg'=>'Succés: tous les champs sont remplis.']; 
+        }
+    return $Msg;
+ }
+  /* fonction de controle de formulaire de login */
+    function verifierDataFormsLogin($dataForms,$p1,$p2){
+      $dataForms=['login'=>$p1,'password'=>$p2];
+      $Msg=[];
+    if ($dataForms['login']==""||($dataForms["password"]=="")) {
+        $Msg =['isEmpty' => true,'msg'=>'Erreur: veuillez remplir tous les champs.'];  
         }
     else{
         $Msg =['isEmpty' => false,'msg'=>'Succés: tous les champs sont remplis.']; 
