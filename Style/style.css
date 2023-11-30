@@ -1,5 +1,5 @@
 
-body {font-family: Arial, Helvetica, sans-serif;margin: 0;}
+body {font-family: Arial, Helvetica, sans-serif;margin: 0;background-color: #e7e6e6c1;}
 form {border: 3px solid #f1f1f1;text-align: center;}
 
 input {
@@ -95,8 +95,8 @@ a{
   font-size: 14px;
 }
 table{
-    text-align: center;
-    min-width: 70%;
+    text-align: left;
+    max-width: 80%;
     margin-left: 20px;
 }
 th  {
@@ -108,10 +108,43 @@ th  {
 td  {
     border:none;
     background-color:#c4dcd4;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     }
+.td_text{
+  text-align: left;
+  
+}
+.container_data{
+  margin-top: 14px;
+  display:flex;
+  flex-wrap: nowrap;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 10px 5px 5px rgb(214, 212, 209);
+  width: 900px;
 
+}
+.container_data > div{
+  margin: 12px;
+  height: 140px;
+  background-color: #ccc;
+
+}
+#Ajouter_panier{
+  color: white;
+  padding: 5px 24px;
+  border: none;
+  cursor: pointer;
+  width:152px ;
+  margin-left:auto;
+
+}
+.container_data_div{
+}
+.img_article{
+  width: 40%;
+  background: #ccc;
+}
 
 
 

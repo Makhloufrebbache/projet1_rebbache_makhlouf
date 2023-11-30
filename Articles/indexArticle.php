@@ -14,30 +14,36 @@ $articles = articles();
 </head>
 <body>
  <div id ="nav_barre">
-  <div id ="div_btn_profile"><a href="" ><?php echo $_SESSION["login"] ?></a></div>
-  <div id ="div_btn_profile"><a href="" >Déconnexion</a></div>
+  <div id ="div_btn_profile"><a href="../User/inscription.php" ><?php echo $_SESSION["login"] ?></a></div>
+  <div id ="div_btn_profile"><a href="../index.php" >Déconnexion</a></div>
 </div> 
 </body>
  
 </html>
-  <h2>Liste des articles</h2>  
-   <!-- Récuprer la liste des articles de la table product  -->
-          <table >
-            <tr>
-               <th>Nom articles</th>
-               <th>Prix</th>
-               <th>Déscription</th>
-               <th>Image</th>
-            </tr>
-             <?php foreach ($articles as $article ) { ?>
-            <tr>
-               <td ><?php echo $article["name"]  ?></td>
-               <td ><?php echo $article["price"]   ?></td>
-               <td><?php  echo $article["description"] ?></td>
-            </tr>
-             <?php  }?>
-          </table>
-
+  
+  <!--   Récuprer la liste des articles de la table product  -->
+   <div class="container_article">
+                <?php foreach ($articles as $article ) { ?>
+                <div class="container_data">
+                    <div class="img_article">
+                       <img src="<?php echo $article["img_url"]?>" alt=" <?php echo $article["img_url"]?>">
+                    </div>
+                    <div class="container_data_div" >
+                       <div class="td_text"><strong>Marque:</strong><?php echo $article["name"]?></div>
+                       <div class="td_text"><strong>Description:</strong><?php echo $article["description"]?></div>
+                       <div class="td_text"><strong>Prix:</strong><?php echo $article["price"]?></div>
+                       <div><button id="Ajouter_panier">Ajouter au panier</button></div>
+                    </div> 
+                </div>
+                <br>
+                    <?php }?>
+                <div>
+                La panier
+               </div>
+    </div>
+    
 </body>
+
 </html>
 <?php 
+ 
