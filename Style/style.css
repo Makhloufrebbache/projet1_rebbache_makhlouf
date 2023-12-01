@@ -121,17 +121,15 @@ td  {
   flex-wrap: nowrap;
   background-color: rgb(255, 255, 255);
   box-shadow: 10px 5px 5px rgb(214, 212, 209);
-  width: 900px;
+  width: 700px;
 
 }
 .container_data > div{
   margin: 12px;
   height: 140px;
-  background-color: #ccc;
 
 }
 #Ajouter_panier{
-  color: white;
   padding: 5px 24px;
   border: none;
   cursor: pointer;
@@ -140,10 +138,17 @@ td  {
 
 }
 .container_data_div{
+  text-align: left;
+  width:70% ;
 }
 .img_article{
-  width: 40%;
-  background: #ccc;
+  width: 30%;
+ text-align: center;
+}
+#img{
+  width: 70%;
+  height: 140px;
+  
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-/*Fonction de création dun utilisateur dans la base de données*/
+//Fonction de création dun utilisateur dans la base de données
 function createUser($user)
  {
     global $conn;
@@ -32,7 +32,7 @@ function existUser($username){
     }
     return $isExist;
  } 
- //Fonction de vérification de l'authentification d'utilisateur dans la base de données*/
+ //Fonction de vérification de l'authentification d'utilisateur dans la base de données
 function authenticatedUser($username,$password){
     global $conn;
     $isExist=["exist"=>false,"msg"=>""];
@@ -47,7 +47,7 @@ function authenticatedUser($username,$password){
     }
     return $isExist;
  } 
-  /* fonction de controle de formulaire d'inscription */
+  // fonction de controle de formulaire d'inscription 
     function verifierDataFormsInscription($dataForms,$p1,$p2,$p3,$p4,$p5){
       $dataForms=['user_name'=>$p1,'email'=>$p2,'pwd'=>$p3,'fname'=>$p4,'lname'=>$p5];
       $Msg=[];
@@ -59,7 +59,7 @@ function authenticatedUser($username,$password){
         }
     return $Msg;
  }
-  /* fonction de controle de formulaire de login */
+  // fonction de controle de formulaire de login 
     function verifierDataFormsLogin($dataForms,$p1,$p2){
       $dataForms=['login'=>$p1,'password'=>$p2];
       $Msg=[];
@@ -71,6 +71,38 @@ function authenticatedUser($username,$password){
         }
     return $Msg;
  }
+ //fonction qui récupere les les informations d'un utilisateur à partir de son username   
+   function getUser($username){
+    global $conn;
+    $result = mysqli_query($conn,"SELECT * FROM user WHERE user_name = '$username'");
+    $users = [];
+    $i = 0;
+    while ($user = mysqli_fetch_assoc($result)) {
+        $users[$i] = $user;
+        $i++;
+    };
+    return $users;
+
+   }
+   //Fonction pour mettre à jour l'utilisateur
+   function updateUser($user){
+   global $conn;
+   $query = "UPDATE user SET billing_address_id = ? , shipping_address_id = ?  WHERE user_name = ?;";
+    if ($stmt = mysqli_prepare($conn, $query)) {
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "iis",
+            $user['billing_address_id'],
+            $user['shipping_address_id'],
+            $user['user_name'],
+        );
+
+        /* Exécution de la requête */
+        $result = mysqli_stmt_execute($stmt);
+
+   }
+   }
     
       
 ?>

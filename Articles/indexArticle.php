@@ -14,7 +14,7 @@ $articles = articles();
 </head>
 <body>
  <div id ="nav_barre">
-  <div id ="div_btn_profile"><a href="../User/inscription.php" ><?php echo $_SESSION["login"] ?></a></div>
+  <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" ><?php echo $_SESSION["login"] ?></a></div>
   <div id ="div_btn_profile"><a href="../index.php" >Déconnexion</a></div>
 </div> 
 </body>
@@ -26,7 +26,7 @@ $articles = articles();
                 <?php foreach ($articles as $article ) { ?>
                 <div class="container_data">
                     <div class="img_article">
-                       <img src="<?php echo $article["img_url"]?>" alt=" <?php echo $article["img_url"]?>">
+                       <img id="img" src="<?php echo $article["img_url"]?>" alt=" <?php echo $article["img_url"]?>">
                     </div>
                     <div class="container_data_div" >
                        <div class="td_text"><strong>Marque:</strong><?php echo $article["name"]?></div>
@@ -36,7 +36,7 @@ $articles = articles();
                     </div> 
                 </div>
                 <br>
-                    <?php }?>
+                                                   <?php }?>
                 <div>
                 La panier
                </div>
