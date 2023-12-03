@@ -33,7 +33,7 @@ $msgErreurLoginAuth="";
     <label>Password</label>
     <input type="text" placeholder="Entrer votre mot depasse" name="password" >
     </div> 
-    <button type="submit">Se connecter</button>
+    <button type="submit" formaction="./traitementLogin.php">Se connecter</button>
     <button type="submit" formaction="./inscription.php">S'inscrire</button>
     </div>
   </div>

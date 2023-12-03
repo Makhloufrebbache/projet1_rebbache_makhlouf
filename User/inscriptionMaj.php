@@ -9,7 +9,6 @@ foreach ($users as $user) {
     $nameMaj= $user["lname"];
     $prenomMaj=$user["fname"];
     $mailMaj=$user["email"];
-
 }}
 else{
    $nameMaj= " ";

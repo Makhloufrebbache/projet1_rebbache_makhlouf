@@ -7,7 +7,7 @@
   <title>Acceuil</title>
 </head>
 <body>
- <div id ="nav_barre">
+ <div id ="nav_barre_index">
  <div id ="div_btn_auth"><a href="User/login.php" >Authentifier</a></div>
  <div id ="div_btn_compt"><a href="User/inscription.php">Crée mon compte</a></div>
 </div> 

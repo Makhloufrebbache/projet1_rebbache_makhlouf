@@ -2,7 +2,6 @@
 session_start();
 require_once("../connexion.php");
 require_once("../Functions/User.php");
-
 $formsEmptyLogin=verifierDataFormsLogin($_POST,$_POST["login"],$_POST["password"]);
 if ($formsEmptyLogin["isEmpty"]==true) {
    $_SESSION["isEmptylogin"]= $formsEmptyLogin["isEmpty"];
@@ -21,7 +20,7 @@ else{
    else  
    {  
       $_SESSION["login"]=$_POST["login"];
-      header('Location: ../Articles/indexArticle.php');
+     header('Location: ../Articles/indexArticle.php');
    } 
 }
 ?>

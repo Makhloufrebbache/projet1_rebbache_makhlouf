@@ -1,8 +1,15 @@
 <?php 
 session_start();
 require_once("../Functions/Article.php");
+require_once("../Functions/User.php");
 require_once("../connexion.php");
 $articles = articles();
+//récupérer l'id de role de l'utilisateur
+$users=getUser($_SESSION["login"]);
+foreach ($users as $user) {
+    $userRole= $user["role_id"];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,16 +20,21 @@ $articles = articles();
     <title>Produit</title>
 </head>
 <body>
- <div id ="nav_barre">
+<div id ="nav_barre">
+<div id ="nav_barre1">
+  <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" >Commandes</a></div>
+  <?php if ($userRole != 3) { ?>
+  <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" >Gestion produits</a></div>
+  <div id ="div_btn_profile"><a href="../Admin/Users.php" >Gestion utilisateur</a></div> <?php } ?>
+</div>
+<div id ="nav_barre2">
   <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" ><?php echo $_SESSION["login"] ?></a></div>
   <div id ="div_btn_profile"><a href="../index.php" >Déconnexion</a></div>
 </div> 
-</body>
- 
-</html>
-  
+</div> 
   <!--   Récuprer la liste des articles de la table product  -->
-   <div class="container_article">
+  <div class="produit">
+        <div class="container_article">
                 <?php foreach ($articles as $article ) { ?>
                 <div class="container_data">
                     <div class="img_article">
@@ -36,14 +48,30 @@ $articles = articles();
                     </div> 
                 </div>
                 <br>
-                                                   <?php }?>
-                <div>
-                La panier
-               </div>
-    </div>
-    
+             <?php }?>
+        </div>
+        <div class="panier">
+          <div id="MonPanier"><h2>Mon panier</h2></div>
+          <table>
+           <tr>
+             <th>Produit</th>
+             <th>Quantité</th>
+             <th>Prix U</th>
+             <th>Prix produit</th>
+           </tr>
+           <tr>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+           </tr>
+         </table>
+         <h3>Prix total:</h3>
+         <button id="btn_valider_commande">Commander</button>
+        </div>      
+   </div> 
 </body>
 
 </html>
-<?php 
+
  

@@ -98,12 +98,51 @@ function authenticatedUser($username,$password){
             $user['user_name'],
         );
 
-        /* Exécution de la requête */
         $result = mysqli_stmt_execute($stmt);
 
    }
    }
-    
+   //fonction qui récupere les les informations de tout les utilisateurs 
+   function getAllUser(){
+    global $conn;
+    $result = mysqli_query($conn,"SELECT * FROM user");
+    $users = [];
+    $i = 0;
+    while ($user = mysqli_fetch_assoc($result)) {
+        $users[$i] = $user;
+        $i++;
+    };
+    return $users;
+   } 
+  //fonction qui supprime l'utilisateur
+  function deleteUser($user_name)
+   {
+     global $conn;
+     $query = "DELETE FROM user
+                WHERE user.user_name = ?;";
+
+     if ($stmt = mysqli_prepare($conn, $query)) {
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "s",
+            $user_name,
+        );
+        $result = mysqli_stmt_execute($stmt);
+    }
+  }
+  //fonction pour récupérer les roles
+  function getRoles(){
+    global $conn;
+    $result = mysqli_query($conn,"SELECT * FROM role");
+    $roles = [];
+    $i = 0;
+    while ($role = mysqli_fetch_assoc($result)) {
+        $roles[$i] = $role;
+        $i++;
+    };
+    return $roles;
+   } 
       
-?>
+ ?>
 

@@ -1,6 +1,6 @@
 
 body {font-family: Arial, Helvetica, sans-serif;margin: 0;background-color: #e7e6e6c1;}
-form {border: 3px solid #f1f1f1;text-align: center;}
+form {border: 0 solid #f1f1f1;text-align: center;}
 
 input {
   width: 600px;
@@ -62,15 +62,34 @@ h2{
   padding-right: 56px;
 
 }
+#role{
+    padding-left: 39px;
+}
+#role_select{
+  width: 640px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
 #msgErreur{
   color: red;
 }
-#nav_barre{
+#nav_barre_index{
 background-color: #04AA6D;
 display: flex;
 height: 70px;
 align-items: center;
-justify-content: end;
+justify-content:end;
+
+}
+#nav_barre{
+background-color: #169864;
+display: flex;
+height: 70px;
+align-items: center;
+justify-content:space-between;
+
 }
 .btn_nav_barre{
  
@@ -96,12 +115,13 @@ a{
 }
 table{
     text-align: left;
-    max-width: 80%;
-    margin-left: 20px;
+    width: 100%;
+    margin-left: 4px;
+    margin-top: -20px;
 }
 th  {
     border:none;
-    background-color:blue;
+    background-color:#b1b5b4;
     text-align: center;
     color: white;
 }
@@ -115,13 +135,24 @@ td  {
   text-align: left;
   
 }
+.container_article{
+  width: 60%;
+}
+.produit{
+  margin-top: 4px;
+  display:flex;
+  flex-wrap: nowrap;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 10px 5px 5px rgb(214, 212, 209);
+  width: 100%;
+}
 .container_data{
   margin-top: 14px;
   display:flex;
   flex-wrap: nowrap;
   background-color: rgb(255, 255, 255);
   box-shadow: 10px 5px 5px rgb(214, 212, 209);
-  width: 700px;
+  width: 100%;
 
 }
 .container_data > div{
@@ -150,7 +181,60 @@ td  {
   height: 140px;
   
 }
+.panier{
+  box-shadow: 10px 5px 5px rgb(214, 212, 209);
+  width: 40%;
+  background-color: #f4f3f3;
+  box-shadow: 10px 5px 5px rgb(214, 212, 209);
+  text-align: center;
 
+}
+h3{
+  margin-left: 20px;
+}
+#btn_valider_commande{
+ padding: 5px 24px;
+  border: none;
+  cursor: pointer;
+  width:152px ;
+  margin-left:120px;
+  font-size: 14px;
+  font-weight: bold;
+}
+#MonPanier{
+  background-color: #f4f3f3;
+  margin-left: 4px;
+  margin-top: -20px;
+}
+#nav_barre1{
+background-color: #169864;
+display: flex;
+height: 70px;
+align-items:center;
+justify-content:end;
+}
+#nav_barre2{
+background-color: #169864;
+display: flex;
+height: 70px;
+align-items:center;
+justify-content:end;
+}
+#tableUser{
+  width: 80%;
+  text-align: center;
+  margin-left:10% ;
+}
+.tableUserTh{
+  background-color: #169864;
+  text-align: center;
+}
+.tableUserTd{
+  text-align: center;
+}
+#btn_modif{
+  margin-left: 14px;
+}
 
 
 
