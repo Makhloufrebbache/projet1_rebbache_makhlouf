@@ -143,6 +143,40 @@ function authenticatedUser($username,$password){
     };
     return $roles;
    } 
-      
+   //fonction qui exécute ma modification d'un compte utilisateur par un administrateur
+   function updateUserByAdmin($user){
+
+   global $conn;
+   $query = "UPDATE user SET  role_id = ?  WHERE user_name = ?;";
+    if ($stmt = mysqli_prepare($conn, $query)) {
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ss",
+            $user['role'],
+           $user['nomUtilisateur'],
+        );
+
+        $result = mysqli_stmt_execute($stmt);
+
+   }
+   } 
+   function updateUser1($user){
+   global $conn;
+   $query = "UPDATE user SET billing_address_id = ? , shipping_address_id = ?  WHERE user_name = ?;";
+    if ($stmt = mysqli_prepare($conn, $query)) {
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "iis",
+            $user['billing_address_id'],
+            $user['shipping_address_id'],
+            $user['user_name'],
+        );
+
+        $result = mysqli_stmt_execute($stmt);
+
+   }
+   }
  ?>
 

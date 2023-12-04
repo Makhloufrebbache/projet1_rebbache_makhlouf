@@ -2,7 +2,9 @@
 session_start();
 require_once("../Functions/User.php");
 require_once("../connexion.php");
-$users=getUser($_SESSION["user_name"]);
+
+$username = $_SESSION["user_name"];
+$users=getUser($username);
 foreach ($users as $user) {
     $lname= $user["lname"];
     $fname= $user["fname"];
@@ -23,7 +25,7 @@ $roles=getRoles();
 </head>
 <body>
   <h2>Modification utilisateur</h2>
-<form action="./traitementInscription.php" method="post">
+<form action="./traitementUpdateUser.php" method="post">
   <div class="container">
    <div id="nom">
     <label  >Nom</label>

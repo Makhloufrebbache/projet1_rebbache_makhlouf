@@ -29,8 +29,8 @@ $allusers=getAllUser();
        <td class="tableUserTd"><?php echo $user["fname"]."  ".$user["lname"] ?></td>
        <td class="tableUserTd"><?php echo $user["user_name"] ?></td>
        <td class="tableUserTd"><?php  if($user["role_id"]==1) {echo "SuperAdmin";} elseif($user["role_id"]==2){echo "Admin";} else{echo "Client";}?></td>
-       <td class="tableUserTd"><a href="./traitementModifyUser.php/?name=<?php echo $user["user_name"] ?>"><img src="../images/edit.jpg"></a></td>
-       <td class="tableUserTd"><a href="./traitementUsers.php/?name=<?php echo $user["user_name"] ?>" ><img src="../images/sup.jpg"></a></td>
+       <td class="tableUserTd"><a href="./traitementStyle.php/?name=<?php echo $user["user_name"] ?>"><img src="../images/edit.jpg"></a></td>
+       <td class="tableUserTd"><a href="./traitementDeleteUsers.php/?name=<?php echo $user["user_name"] ?>" ><img src="../images/sup.jpg"></a></td>
      </tr> 
     <?php } ?>
 </table>
