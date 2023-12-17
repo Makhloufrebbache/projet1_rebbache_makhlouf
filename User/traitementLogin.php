@@ -20,7 +20,7 @@ else{
    else  
    {  
       $_SESSION["login"]=$_POST["login"];
-     header('Location: ../Articles/indexArticle.php');
+      header('Location: ../Articles/indexArticle.php');
    } 
 }
 ?>

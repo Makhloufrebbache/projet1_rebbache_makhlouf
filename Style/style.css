@@ -168,6 +168,14 @@ td  {
   margin-left:auto;
 
 }
+#commander{
+  padding: 5px 24px;
+  border: none;
+  cursor: pointer;
+  width:152px ;
+  margin-left:20%;
+
+}
 .container_data_div{
   text-align: left;
   width:70% ;
@@ -205,6 +213,7 @@ h3{
   background-color: #f4f3f3;
   margin-left: 4px;
   margin-top: -20px;
+ 
 }
 #nav_barre1{
 background-color: #169864;
@@ -235,8 +244,15 @@ justify-content:end;
 #btn_modif{
   margin-left: 14px;
 }
-
-
+#qte_update{
+  width: 120px;
+}
+#img_detail_div{
+  width: 30%;
+}
+#img_detail{
+  width: 100%;
+}
 
 
 

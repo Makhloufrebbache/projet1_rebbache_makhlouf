@@ -4,8 +4,9 @@ function createUser($user)
  {
     global $conn;
     $query = "INSERT INTO user VALUES (NULL,?,?,?,?,?,'','','',3)";
+  
     if ($stmt = mysqli_prepare($conn, $query)) {
-       
+     
         mysqli_stmt_bind_param(
             $stmt,
             "sssss",
@@ -145,7 +146,7 @@ function authenticatedUser($username,$password){
    } 
    //fonction qui exécute ma modification d'un compte utilisateur par un administrateur
    function updateUserByAdmin($user){
-
+   
    global $conn;
    $query = "UPDATE user SET  role_id = ?  WHERE user_name = ?;";
     if ($stmt = mysqli_prepare($conn, $query)) {

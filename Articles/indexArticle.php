@@ -1,5 +1,14 @@
 <?php 
 session_start();
+
+if(isset($_SESSION['panier'])){
+
+$_SESSION['panier'][$_SESSION['id']]=["id"=>$_SESSION['id'],"prix"=>$_POST['prix'],"qte"=>$_POST['qte'],"prixTotal"=>$_POST['prix'] * $_POST['qte'],"name"=>$_POST['name']];
+}
+else{
+  $_SESSION['panier']=[];
+}
+
 require_once("../Functions/Article.php");
 require_once("../Functions/User.php");
 require_once("../connexion.php");
@@ -44,7 +53,7 @@ foreach ($users as $user) {
                        <div class="td_text"><strong>Marque:</strong><?php echo $article["name"]?></div>
                        <div class="td_text"><strong>Description:</strong><?php echo $article["description"]?></div>
                        <div class="td_text"><strong>Prix:</strong><?php echo $article["price"]?></div>
-                       <div><button id="Ajouter_panier">Ajouter au panier</button></div>
+                       <a href="./page.php/?id=<?php echo $article["id"]?>"><div><button id="Ajouter_panier">Voir plus</button></div></a>
                     </div> 
                 </div>
                 <br>
@@ -54,21 +63,34 @@ foreach ($users as $user) {
           <div id="MonPanier"><h2>Mon panier</h2></div>
           <table>
            <tr>
+             <th>id</th>
              <th>Produit</th>
              <th>Quantité</th>
              <th>Prix U</th>
              <th>Prix produit</th>
            </tr>
            <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+    <form action="./traitementCommande.php" method="post">
+         <?php if (isset(($_SESSION['panier'])) ) 
+         $i =0;
+         foreach ($_SESSION['panier'] as $produit) { 
+          ?>
+            <td><?php echo $produit['id'] ?></td>
+            <td><?php echo $produit['name'] ?></td>
+             <td>
+             <?php echo $produit['qte'] ?>
+             </td>
+             <td><?php echo $produit['prix'] ?></td>
+             <td><?php echo $produit['prixTotal'] ?></td>
            </tr>
+          <?php 
+        $i++;
+        } ?>
          </table>
-         <h3>Prix total:</h3>
-         <button id="btn_valider_commande">Commander</button>
-        </div>      
+         <h3>Prix total: <?php if(isset($_SESSION['total']))  echo $_SESSION['total'] ?></h3>
+         <button id="commander" type="submit">Commander</button>
+        </div> 
+      </form>     
    </div> 
 </body>
 
