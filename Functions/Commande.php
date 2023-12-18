@@ -29,11 +29,9 @@ function createUserOrder($user_order){
             $user_order['user_id'],
         );
            $result = mysqli_stmt_execute($stmt);
-          
     }
         $last_id = mysqli_insert_id($conn);
         return $last_id;
-    
 }
 //Fonction pour inserer dans la table order_has_product. 
 function createCommande($order){
@@ -50,7 +48,7 @@ $query = "INSERT INTO order_has_product VALUES (?,?,?,?)";
             $order['price'],
         );
         $result = mysqli_stmt_execute($stmt);
-        echo mysqli_error($conn);
+       // echo mysqli_error($conn);
     }
 }
 ?>

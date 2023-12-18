@@ -39,13 +39,14 @@ function authenticatedUser($username,$password){
     $isExist=["exist"=>false,"msg"=>""];
     $result = mysqli_query($conn,"SELECT DISTINCT user_name,pwd FROM user WHERE user_name = '$username' and pwd='$password'" );
     $nameFind = mysqli_fetch_assoc($result);
-    var_dump($nameFind);
     if($nameFind["user_name"]==$username and $nameFind["pwd"]==$password ){
     $isExist=["auth"=>true,"msg"=>"Utilisateur connecté "]; 
+
     }
     else{
      $isExist=["auth"=>false,"msg"=>"Veuillez saisir correctement vous informations !"];   
     }
+
     return $isExist;
  } 
   // fonction de controle de formulaire d'inscription 
@@ -161,8 +162,9 @@ function authenticatedUser($username,$password){
         $result = mysqli_stmt_execute($stmt);
 
    }
-   } 
-   function updateUser1($user){
+   }
+//Mise à jours des adresses
+   function updateUserAdress($user) {
    global $conn;
    $query = "UPDATE user SET billing_address_id = ? , shipping_address_id = ?  WHERE user_name = ?;";
     if ($stmt = mysqli_prepare($conn, $query)) {
@@ -172,6 +174,23 @@ function authenticatedUser($username,$password){
             "iis",
             $user['billing_address_id'],
             $user['shipping_address_id'],
+            $user['user_name'],
+        );
+
+        $result = mysqli_stmt_execute($stmt);
+
+   }
+}
+//Insérer le token
+   function updateUserSetToken($user){
+   global $conn;
+   $query = "UPDATE user SET token = ?  WHERE user_name = ?;";
+    if ($stmt = mysqli_prepare($conn, $query)) {
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ss",
+            $user['token'],
             $user['user_name'],
         );
 
