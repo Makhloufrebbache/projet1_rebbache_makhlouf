@@ -16,7 +16,7 @@ $article=article($id)
     <title>quantité article</title>
 </head>
  <body>
-   <form action="" method="post">
+<form action="" method="post">
   
   <div id="Detail_Article">
     <div id="img_detail_div">

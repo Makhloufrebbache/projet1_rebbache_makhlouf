@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+
 if(isset($_SESSION['panier'])){
 
 $_SESSION['panier'][$_SESSION['id']]=["id"=>$_SESSION['id'],"prix"=>$_POST['prix'],"qte"=>$_POST['qte'],"prixTotal"=>$_POST['prix'] * $_POST['qte'],"name"=>$_POST['name']];
@@ -31,7 +32,7 @@ foreach ($users as $user) {
 <body>
 <div id ="nav_barre">
 <div id ="nav_barre1">
-  <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" >Commandes</a></div>
+  <div id ="div_btn_profile"><a href="./listeCommande.php" >Commandes</a></div>
   <?php if ($userRole != 3) { ?>
   <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" >Gestion produits</a></div>
   <div id ="div_btn_profile"><a href="../Admin/Users.php" >Gestion utilisateur</a></div> <?php } ?>

@@ -50,5 +50,30 @@ $query = "INSERT INTO order_has_product VALUES (?,?,?,?)";
         $result = mysqli_stmt_execute($stmt);
        // echo mysqli_error($conn);
     }
-}
+    }
+ //fonction qui récupere toutes les commandes 
+   function getAllOrder(){
+    global $conn;
+    $result = mysqli_query($conn,"SELECT * FROM user_order");
+    $orders = [];
+    $i = 0;
+    while ($order = mysqli_fetch_assoc($result)) {
+        $orders[$i] = $order;
+        $i++;
+    };
+    return $orders;
+   } 
+   //fonction qui récupere toutes les commandes 
+   function getAllOrderById($userID){
+    global $conn;
+    $result = mysqli_query($conn,"SELECT * FROM user_order WHERE user_id = $userID");
+    $orders = [];
+    $i = 0;
+    while ($order = mysqli_fetch_assoc($result)) {
+        $orders[$i] = $order;
+        $i++;
+    };
+    return $orders;
+   } 
+
 ?>
