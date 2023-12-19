@@ -10,7 +10,7 @@ if ($formsEmptyLogin["isEmpty"]==true) {
    header('Location: login.php');
    die(); 
 }
-//
+//Verifier les élémenent d'authentification
 else{
    $userAuthentication= authenticatedUser($_POST["login"],$_POST["password"]);
    if (!$userAuthentication["auth"]) {

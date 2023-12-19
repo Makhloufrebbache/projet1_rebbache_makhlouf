@@ -253,6 +253,18 @@ justify-content:end;
 #img_detail{
   width: 100%;
 }
+#Detail_Article{
+padding-top: 20px;
+display: flex;
+align-items:center;
+justify-content:center;
+}
+#Description{
+margin-left: -370px;
+}
+#Qte{
+  margin-top: 10px;
+}
 
 
 

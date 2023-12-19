@@ -17,25 +17,29 @@ $article=article($id)
 </head>
  <body>
    <form action="" method="post">
+  
+  <div id="Detail_Article">
     <div id="img_detail_div">
-    <label for="">Image</label>
-    <img id="img_detail" src="<?php echo $article[0]['img_url']?>" alt="<?php echo $article[0]['img_url']?>">
-     <input id="test_input" name="name" type="text" value="<?php echo $article[0]['name'] ?>">
+      <img id="img_detail" src="<?php echo $article[0]['img_url']?>" alt="<?php echo $article[0]['img_url']?>">
     </div>
-    <div>
-    <label for="">Marque</label>
-    <input id="test_input" name="name" type="text" value="<?php echo $article[0]['name'] ?>">
-    </div>
-    <div>
-    <label for="">Prix</label>
-    <input name="prix" type="text" value="<?php echo $article[0]['price'] ?>">
-    </div>
-    <div>
-    <label for="">Saisir la quantité</label>
-    <input name="qte" type="text">
-    </div>
-    <a href=""> <button formaction="./indexArticle.php">Confirmer</button></a>
-   </form> 
+  </div>
+  <div id="Description">
+      
+      <div>
+        <label for="">Prix:</label>
+        <label name="prix" style="color: blue" for="">  <?php echo $article[0]['price'] ?></label>
+        <div hidden>
+        <input hidden  style="width: 420px" name="prix" type="text" placeholder="Saisir la quantité" value="<?php echo $article[0]['price'] ?>">
+        <input  style="width: 420px" name="name" type="text" placeholder="Saisir la quantité" value="<?php echo $article[0]['name'] ?>" type="hidden">
+        </div>
+      </div>
+     
+   </div>
+   <div id="Qte">
+       <input style="width: 420px" name="qte" type="text" placeholder="Saisir la quantité">
+      </div>
+     <a href=""> <button style="width: 460px ;margin-left: 100px;" formaction="./indexArticle.php">Confirmer</button></a>
+  </form> 
 </body>
 </html>
 <?php
