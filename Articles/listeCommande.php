@@ -22,7 +22,7 @@ $orderUser=getAllOrderById($userid);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/style.css">
-    <title>User</title>
+    <title>Commandes</title>
 </head>
 <body>
 <div id="tableUser">

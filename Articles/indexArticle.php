@@ -34,7 +34,7 @@ foreach ($users as $user) {
 <div id ="nav_barre1">
   <div id ="div_btn_profile"><a href="./listeCommande.php" >Commandes</a></div>
   <?php if ($userRole != 3) { ?>
-  <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" >Gestion produits</a></div>
+  <div id ="div_btn_profile"><a href="../Admin/Products.php" >Gestion produits</a></div>
   <div id ="div_btn_profile"><a href="../Admin/Users.php" >Gestion utilisateur</a></div> <?php } ?>
 </div>
 <div id ="nav_barre2">
