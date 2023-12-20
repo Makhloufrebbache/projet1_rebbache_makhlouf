@@ -86,10 +86,10 @@ function authenticatedUser($username,$password){
     return $users;
 
    }
-   //Fonction pour mettre à jour l'utilisateur
-   function updateUser($user){
+   //Fonction pour mettre à jour les champs adresse dans la table user
+   function updateUserAdress($user,$id){
    global $conn;
-   $query = "UPDATE user SET billing_address_id = ? , shipping_address_id = ?  WHERE user_name = ?;";
+   $query = "UPDATE user SET billing_address_id =?, shipping_address_id = ?  WHERE user_name = ?;";
     if ($stmt = mysqli_prepare($conn, $query)) {
 
         mysqli_stmt_bind_param(
@@ -164,7 +164,7 @@ function authenticatedUser($username,$password){
    }
    }
 //Mise à jours des adresses
-   function updateUserAdress($user) {
+   function updateUser($user) {
    global $conn;
    $query = "UPDATE user SET billing_address_id = ? , shipping_address_id = ?  WHERE user_name = ?;";
     if ($stmt = mysqli_prepare($conn, $query)) {
@@ -198,5 +198,27 @@ function authenticatedUser($username,$password){
 
    }
    }
+//Fonction pour céation d'adresse et récpérer l'id
+function createAdress( $data) {
+    global $conn;
+    $query = "INSERT INTO address VALUES (NULL,?,?,?,?,?,?)";
+    if ($stmt = mysqli_prepare($conn, $query)) {
+       
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sissss",
+            $data['street_name'],
+            $data['street_nb'],
+            $data['city'],
+            $data['province'],
+            $data['zip_code'],
+            $data['country'],
+        );
+
+        $result = mysqli_stmt_execute($stmt);
+    }
+     $last_id = mysqli_insert_id($conn);
+     return $last_id;
+}
  ?>
 

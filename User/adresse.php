@@ -26,11 +26,11 @@ $borderColor='style = "border-color: red; border-width: 2px"';
   <!--formulaire de saisie et de modification au méme temps pour les adresses -->
  <h2 style = "text-align: center">Formulaire d'ajout d'adresses</h2> 
 <div id="form1">
-<form action="traitementAdress.php" method="post">
+<form action="./traitementAdress.php" method="post">
   
    <p id="title_form1"></p>
     <div id="div1_form1"> <label  for=""><span>Street </span>  : </label>
-                          <input class="input_form1" text="" name= "street" value="" placeholder="Saisir le nom de la rue">
+                          <input class="input_form1" text="" name= "street_name" value="" placeholder="Saisir le nom de la rue">
     </div>
     <div id="div1_form2"> <label  for=""><span >Street numbrer </span>  :  </label>
                           <input class="input_form1" text="" name="street_nb" value=""  placeholder="Saisir le numéro de la rue">
@@ -39,7 +39,7 @@ $borderColor='style = "border-color: red; border-width: 2px"';
                           <input   class="input_form1" text="" name= "city" value="" placeholder="Saisir le nom de la rue">
     </div>
     <div style = "margin-left: -30px" id="div1_form4"> <label for=""> <span class="label_form1">Province</span>  :  </label> 
-                                <select name="" class="input_select_form1">
+                                <select name="province" class="input_select_form1">
                                         <option value=>Séléctionner la province</option>
                                         <option value="Montréal">Montréal</option>
                                         <option value="Quebec">Quebec</option>
@@ -49,10 +49,10 @@ $borderColor='style = "border-color: red; border-width: 2px"';
                                 </select>
     </div>
     <div id="div1_form5"> <label for=""><span >Zipe code </span>  : </label>
-                          <input class="input_form1" text="" name="zipcode" value="" placeholder="Saisir le code postal">
+                          <input class="input_form1" text="" name="zip_code" value="" placeholder="Saisir le code postal">
     </div>
      <div style ="margin-left: -30px" id="div1_form4"> <label for=""> <span class="label_form1">Country</span>  :  </label> 
-                                <select name="contry"class="input_select_form1" >
+                                <select name="country"class="input_select_form1" >
                                         <option value="">Séléctionner country</option>
                                         <option value="Montréal">Algerie</option>
                                         <option value="Quebec">Canada</option>
