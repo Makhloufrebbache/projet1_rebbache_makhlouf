@@ -19,7 +19,7 @@ $articles=articles();
    <caption>
       <div  class="row success">
         <div class="col-lg-3"></div>
-        <div  class="col-lg-4" >&nbsp;<span  ><a id="a" href="./admin/usersadd">+Ajouter un produit </a></span></div><br>
+        <div  class="col-lg-4" >&nbsp;<span  ><a id="a" href="../Admin/produitAdd.php">+Ajouter un produit </a></span></div><br>
     
       </div>
    </caption>
@@ -42,9 +42,9 @@ $articles=articles();
        <td><?php echo $article['name'];?><?php ?></td>
        <td><?php echo $article['quantity'];?></td>
        <td><?php echo $article['price'];?></td>
-       <td><?php echo $article['img_url'];?></td>
+       <td><a id="b" href="<?php echo $article['img_url'];?>">Voir l'image</a></td>
        <td><?php echo $article['description'];?></td>
-        <td class="tableUserTd"><a href="./../?name=<?php echo $article["id"] ?>"><img src="../images/edit.jpg"></a></td>
+       <td class="tableUserTd"><a href="./../?name=<?php echo $article["id"] ?>"><img src="../images/edit.jpg"></a></td>
        <td class="tableUserTd"><a href="./traitementDeleteArticle.php/?name=<?php echo $article["id"] ?>" ><img src="../images/sup.jpg"></a></td>
 
        

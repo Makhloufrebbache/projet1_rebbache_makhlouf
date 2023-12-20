@@ -24,5 +24,24 @@ function article($id){
     };
  return $articles;
  } 
-
+ //Fonction qui ajoute un produit dans la base de donnée.
+ function ajouterArticle($article){
+ global $conn;
+ $query = "INSERT INTO product VALUES (NULL,?,?,?,?,?)";
+   if ($stmt = mysqli_prepare($conn, $query)) {
+        
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sidss",
+            $article['name'],
+            $article['quantity'],
+            $article['price'],
+            $article['img_url'],
+            $article['description'],
+            
+        );
+        $result = mysqli_stmt_execute($stmt);
+         echo mysqli_error($conn);
+    }
+}
 ?>
