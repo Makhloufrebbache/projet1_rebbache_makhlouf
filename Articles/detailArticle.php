@@ -3,6 +3,7 @@ require_once("../Functions/Article.php");
 require_once("../Functions/User.php");
 require_once("../connexion.php");
 session_start();
+
 $id =$_SESSION["GET_ID"];
 $_SESSION['id']=$id;
 $article=article($id)
@@ -43,6 +44,5 @@ $article=article($id)
 </body>
 </html>
 <?php
-
 ?>
 

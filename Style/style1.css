@@ -1,0 +1,145 @@
+body{
+    background-color: rgb(178 203 202);
+}
+#form2,#form1,#form0{
+    text-align: center;
+  
+}
+.input_form1,#input_form0{
+width: 600px;
+height: 32px;
+text-align: center;
+border-radius: 5px;
+border-width: 0;
+background-color: white;
+
+}
+.input_select_form1{
+width: 604px;
+height: 34px;
+text-align: center;
+border-radius: 5px;
+border-width: 0px;
+
+}
+.label.form1,.label_form0{
+ font-weight: bold;
+ color: red;   
+}
+span{
+    font-weight: bold;
+   color: black;
+}
+#div1_form1{
+    padding-left:64px;
+   border: 0px;
+   
+}
+#div1_form2{
+    padding-left:0px;
+    margin-top: 4px;
+}
+#div1_form3{
+    padding-left:27px;
+    margin-top: 4px;
+}
+#div1_form4{
+    padding-left:76px;
+    margin-top: 4px;
+}
+#div1_form5{
+    padding-left:40px;
+    margin-top: 4px;
+}
+#title_form1,#title_form0{
+    font-size: 22px;
+    color:black;
+    font-weight: bold;
+    margin-left: 100px;
+  
+}
+#btn_submit,#btn_submit1{
+    width: 600px;
+    height: 34px;
+    margin-top: 4px;
+    margin-left: 100px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border-width : 0;
+    border-radius: 5px;
+    margin-left: 120px;
+}
+#form2{
+   /*text-align: center;*/
+}
+#msg_error{
+   font-weight: bold;
+   color: red;
+   font-size: 15px;
+}
+#msg_succes{
+ 
+   color: green;
+   font-size: 15px;
+}
+#btn_submit_0{
+    width: 130px;
+    height: 33px;
+    margin-top: 10px;
+    margin-left: 4px;
+    font-size: 17px;
+   
+    background-color: white;
+    color: black;
+    border-width : 0;
+    border-radius: 3px;
+}
+#div1_form0{
+    padding-left:65px;
+   border: 0px;
+   
+}
+#div2_form0{
+    padding-left:41px;
+    margin-top: 4px;
+}
+#div3_form0{
+    padding-left:76px;
+    margin-top: 4px;
+}
+#div4_form0{
+    padding-left:80px;
+    margin-top: 4px;
+}
+#div5_form0{
+    padding-left:77px;
+    margin-top: 4px;
+}
+#div_btn_retour, #div_btn_retour_index{
+    width: 600px;
+    height: 34px;
+    margin-top: 3px;
+    margin-left: 520px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border-width : 0;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+a{
+text-decoration: none;
+}
+
+#msg_error_forms_saisie{
+    text-align: center;
+    color: red;
+}
+h2{
+    color: red;
+    margin-left: 100px;
+}

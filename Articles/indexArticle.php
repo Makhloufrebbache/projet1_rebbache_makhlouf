@@ -1,8 +1,7 @@
 <?php 
 session_start();
 
-
-if(isset($_SESSION['panier'])){
+if(isset($_SESSION['panier'])&isset($_POST['prix'])){
 
 $_SESSION['panier'][$_SESSION['id']]=["id"=>$_SESSION['id'],"prix"=>$_POST['prix'],"qte"=>$_POST['qte'],"prixTotal"=>$_POST['prix'] * $_POST['qte'],"name"=>$_POST['name']];
 }
@@ -38,6 +37,7 @@ foreach ($users as $user) {
   <div id ="div_btn_profile"><a href="../Admin/Users.php" >Gestion utilisateur</a></div> <?php } ?>
 </div>
 <div id ="nav_barre2">
+  <div id ="div_btn_profile"><a href="../User/adresse.php" >Mes adresses</a></div>
   <div id ="div_btn_profile"><a href="../User/inscriptionMaj.php" ><?php echo $_SESSION["login"] ?></a></div>
   <div id ="div_btn_profile"><a href="../index.php" >Déconnexion</a></div>
 </div> 
@@ -88,7 +88,7 @@ foreach ($users as $user) {
         $i++;
         } ?>
          </table>
-         <h3>Prix total: <?php if(isset($_SESSION['total']))  echo $_SESSION['total'] ?></h3>
+         <h3>Prix total: </h3>
          <button id="commander" type="submit">Commander</button>
         </div> 
       </form>     

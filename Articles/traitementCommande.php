@@ -27,6 +27,6 @@ foreach ($_SESSION['panier'] as $panier) {
    $order=['order_id'=>$lastID,'product_id'=>$panier["id"],'quantity'=>$panier["qte"],'price'=>$panier["prix"]];
    createCommande($order);
 }
- $_SESSION['total']= $total;
+ 
  //header('Location: ./indexArticle.php');
 ?>
