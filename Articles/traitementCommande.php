@@ -28,5 +28,5 @@ foreach ($_SESSION['panier'] as $panier) {
    createCommande($order);
 }
  
- //header('Location: ./indexArticle.php');
+ header('Location: ./indexArticle.php');
 ?>
