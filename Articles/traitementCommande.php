@@ -2,6 +2,7 @@
 require_once("../connexion.php");
 require_once("../Functions/User.php");
 require_once("../Functions/Commande.php");
+require_once("../Functions/Article.php");
 session_start();
 $total=0;
 
@@ -26,7 +27,18 @@ foreach ($_SESSION['panier'] as $panier) {
    foreach ($_SESSION['panier'] as $panier) {
    $order=['order_id'=>$lastID,'product_id'=>$panier["id"],'quantity'=>$panier["qte"],'price'=>$panier["prix"]];
    createCommande($order);
+   //Récuper la quantité de l'article dans la BD.
+   $articles=article($panier["id"]);
+   foreach ($articles as $article) {
+  if($article['id']==$panier["id"]){
+    $qteTotal=$article['quantity'];
+    }
+   }
+//Calculer la quantité restante
+   $qte = $qteTotal-$panier["qte"];
+   $product=['id'=>$panier["id"],'quantity'=>$qte];
+//Mettre à jour le stock
+   updateArticle($product,$panier["id"],$qte);
 }
- 
- header('Location: ./indexArticle.php');
+   header('Location: ./indexArticle.php');
 ?>

@@ -44,4 +44,20 @@ function article($id){
          echo mysqli_error($conn);
     }
 }
+//Fonction pour mettre à jours le quantité d'un produit
+ function updateArticle($product,$id,$qte){
+   global $conn;
+   $query = "UPDATE product SET quantity= ?  WHERE id = ?;";
+    if ($stmt = mysqli_prepare($conn, $query)) {
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "id",
+            $product['quantity'],
+            $product['id'],
+        );
+
+        $result = mysqli_stmt_execute($stmt);
+   }
+   }
 ?>
