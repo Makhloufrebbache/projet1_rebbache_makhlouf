@@ -8,7 +8,7 @@ $_SESSION["mail"]=$_POST["mail"];
 $_SESSION["pwd"]=$_POST["pwd"];
 $_SESSION["nom"]=$_POST["nom"];
 $_SESSION["prenom"]=$_POST["prenom"];
-
+//vérifer les champs du formulaire
 $formsEmpty=verifierDataFormsInscription($_POST,$_POST["nomUtilisateur"],$_POST["mail"],$_POST["pwd"],$_POST["nom"],$_POST["prenom"]);
 
 if ($formsEmpty["isEmpty"]==true) {
@@ -27,6 +27,7 @@ else{
    }
    else  
    {  
+      //Créaton de l'utilisateur
       $user=['user_name'=>$_POST["nomUtilisateur"],'email'=>$_POST["mail"],'pwd'=>sha1($_POST["pwd"]),'fname'=>$_POST["nom"],'lname'=>$_POST["prenom"]];
       createUser($user);
       header('Location: login.php');

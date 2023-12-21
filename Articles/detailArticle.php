@@ -14,9 +14,10 @@ $article=article($id)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/style.css">
-    <title>quantité article</title>
+    <title>Détail article</title>
 </head>
  <body>
+<!--Formulaire affichant les détail d'un article séléctionné pour l'ajouter au panier-->
 <form action="" method="post">
   
   <div id="Detail_Article">

@@ -1,6 +1,6 @@
 <?php
 
-//Fonction qui recupères tous les articles de table product
+//Fonction qui recupères tous les articles de la table product
 function articles(){
     global $conn;
     $result = mysqli_query($conn,"SELECT * FROM product");
@@ -44,7 +44,7 @@ function article($id){
          echo mysqli_error($conn);
     }
 }
-//Fonction pour mettre à jours le quantité d'un produit
+//Fonction pour mettre à jours la quantité d'un produit
  function updateArticle($product,$id,$qte){
    global $conn;
    $query = "UPDATE product SET quantity= ?  WHERE id = ?;";

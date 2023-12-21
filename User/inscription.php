@@ -1,6 +1,7 @@
 <?php 
  session_start();
-
+/*Récupérer les informations d'inscription dans des variables de session
+et donner un style de couleur pour les champs vide*/
 if(isset($_SESSION["nomUtilisateur"])&& (!empty($_SESSION["nomUtilisateur"]))){
  $usernameUser=$_SESSION["nomUtilisateur"];
  $labelColor1= '';
@@ -99,7 +100,7 @@ else{
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../Style/style.css">
 <h2>Formulaire d'inscription</h2>
-
+<!--Formulaire d'inscription et affichage de message d'erreur -->
 <form action="./traitementInscription.php" method="post">
  <p id="msgErreur"><?php echo $msgErreur; ?></p>
  <p echo id="msgErreur" ><?php echo $msgUserExit; ?></p>

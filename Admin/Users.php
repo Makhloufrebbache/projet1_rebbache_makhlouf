@@ -2,6 +2,7 @@
 session_start();
 require_once("../connexion.php");
 require_once("../Functions/User.php");
+//Récuprer tout les utilisateurs
 $allusers=getAllUser();
 ?>
 <!DOCTYPE html>
@@ -16,6 +17,7 @@ $allusers=getAllUser();
 <div id="tableUser">
   <h2>Gestion des utilisateurs</h2>
   <br>  
+  <!--Affichage de tout les utilisateurs-->
   <table >
      <tr id="tableUserTr" >
        <th class="tableUserTh">Nom & Prénom</th>

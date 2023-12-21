@@ -19,6 +19,7 @@ foreach ($users as $user) {
     $userRole= $user["role_id"];
 }
 
+//Affichage du tableau de bord utilisateur
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,7 @@ foreach ($users as $user) {
   <div id ="div_btn_profile"><a href="../index.php" >Déconnexion</a></div>
 </div> 
 </div> 
-  <!--   Récuprer la liste des articles de la table product  -->
+<!--   Récuprer la liste des articles de la table product  -->
   <div class="produit">
         <div class="container_article">
                 <?php foreach ($articles as $article ) { ?>
@@ -71,6 +72,7 @@ foreach ($users as $user) {
              <th>Prix produit</th>
            </tr>
            <tr>
+<!--formulaire qui affiche les articles du panier -->            
     <form action="./traitementCommande.php" method="post">
          <?php if (isset(($_SESSION['panier'])) ) 
          $i =0;

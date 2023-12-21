@@ -23,7 +23,7 @@ foreach ($_SESSION['panier'] as $panier) {
    $date = date("Y-m-d");
    $user_order =['ref'=>nextReferenceInOrderUser(),'date'=>$date,'total'=>$total,'user_id'=>intval($id)]; 
    $lastID= createUserOrder($user_order);
-   // Inserer dans la table order_has_product.
+   // Insérer dans la table order_has_product.
    foreach ($_SESSION['panier'] as $panier) {
    $order=['order_id'=>$lastID,'product_id'=>$panier["id"],'quantity'=>$panier["qte"],'price'=>$panier["prix"]];
    createCommande($order);

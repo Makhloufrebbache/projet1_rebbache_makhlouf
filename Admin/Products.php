@@ -3,6 +3,7 @@ session_start();
 require_once("../connexion.php");
 require_once("../Functions/Article.php");
 require_once("../Functions/User.php");
+
 $articles=articles();
 ?>
 <!DOCTYPE html>
@@ -15,6 +16,7 @@ $articles=articles();
 </head>
 <body>
 <div style="padding: 30px 200px ;width: 100%;">
+<!--Affichage, ajout et modification des produits par l'administrateur-->
 <table style="width: 70%;" class="table table-bordered table-striped table-condensed ">
    <caption>
       <div  class="row success">

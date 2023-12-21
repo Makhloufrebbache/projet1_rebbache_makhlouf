@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../Style/style.css">
 <h2>Ajout produit</h2>
-
+<!--Formulaire d'ajout un produit -->
 <form action="./traitementProduit.php" method="post">
 
   <div class="container">

@@ -2,7 +2,7 @@
 session_start();
 require_once("../Functions/User.php");
 require_once("../connexion.php");
-
+//Récuprer l'utilisateur connécté.
 $username = $_SESSION["user_name"];
 $users=getUser($username);
 foreach ($users as $user) {
@@ -12,6 +12,7 @@ foreach ($users as $user) {
     $user_name=$user["user_name"];
     $password=$user["pwd"];
 }
+//Récupérer les les roles dans table role.
 $roles=getRoles();
 ?>
 <!DOCTYPE html>
@@ -25,6 +26,7 @@ $roles=getRoles();
 </head>
 <body>
   <h2>Modification utilisateur</h2>
+<!--Récupérer les informations de l'utilisateur à modifié -->
 <form action="./traitementUpdateUser.php" method="post">
   <div class="container">
    <div id="nom">

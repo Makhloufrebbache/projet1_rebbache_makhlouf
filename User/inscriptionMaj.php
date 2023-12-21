@@ -3,6 +3,7 @@
 session_start();
 require_once("../connexion.php");
 require_once("../Functions/User.php");
+//Récupérer les informations de l'utilisateur à mettre à jours et les affecter à des variables
 if(isset($_SESSION["login"])){
 $users=getUser($_SESSION["login"]);
 foreach ($users as $user) {
@@ -24,10 +25,8 @@ else{
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../Style/style.css">
 <h2>Formulaire de mise à jours profil</h2>
-
+<!--Formulaire de mise à jours de profil utilisateur -->
 <form action="./traitementInscriptionMaj.php" method="post">
- <!-- <p id="msgErreur"><?php echo $msgErreur; ?></p>
- <p echo id="msgErreur" ><?php echo $msgUserExit; ?></p> -->
 
   <div class="container">
    <div id="nom">

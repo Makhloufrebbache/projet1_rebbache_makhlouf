@@ -16,6 +16,7 @@ $userid= $user["id"];
 }
 $orderUser=getAllOrderById($userid);
 ?>
+<!--Récupérer les commandes selon id de user, sauf si c'est un admin il peut voir toutes les commandes -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

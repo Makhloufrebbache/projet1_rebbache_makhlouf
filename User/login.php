@@ -1,6 +1,8 @@
 
 <?php
+
 session_start();
+//initialisation de variables qui s'encharge de l'affichage des messages d'erreurs
 if(isset($_SESSION["isEmptylogin"])){
 $msgErreurLoginEmpty=$_SESSION["msgErreurLoginEmpty"];
  }
@@ -19,6 +21,7 @@ $msgErreurLoginAuth="";
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../Style/style.css">
+<!--Formulaire de connexion -->
 <h2>Formulaire de connexion</h2>
 
 <form action="./traitementLogin.php" method="post">

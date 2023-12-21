@@ -1,7 +1,5 @@
 <?php
  session_start();
-//  Récupérer le nombre de formulaires à crées ou déja crées dans le cas d'une modification dans la variable $nbr_forms.
-
 ?>
 <?php
 
@@ -23,7 +21,7 @@ $borderColor='style = "border-color: red; border-width: 2px"';
   <title>Formulaire saisie</title>
 </head>
 <body>
-  <!--formulaire de saisie et de modification au méme temps pour les adresses -->
+  <!--formulaire d'adresses-->
  <h2 style = "text-align: center">Formulaire d'ajout d'adresses</h2> 
 <div id="form1">
 <form action="./traitementAdress.php" method="post">
